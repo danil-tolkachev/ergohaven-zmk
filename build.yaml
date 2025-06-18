@@ -14,16 +14,34 @@
 ---
 include:
   - board: ergohaven
+    shield: velvet_v3_dongle prospector_adapter
+    snippet: zmk-usb-logging
+    # snippet: studio-rpc-usb-uart
+    # cmake-args: -DCONFIG_ZMK_STUDIO=y
+    artifact-name: velvet_v3_dongle-ergohaven-zmk
+  - board: ergohaven
+    shield: velvet_v3_ruen velvet_v3_dongle prospector_adapter
+    snippet: zmk-usb-logging
+    # snippet: studio-rpc-usb-uart
+    # cmake-args: -DCONFIG_ZMK_STUDIO=y
+    artifact-name: velvet_v3_dongle_ruen-ergohaven-zmk
+  - board: ergohaven
+    shield: velvet_v3_left_dongle
+    snippet: zmk-usb-logging
+  - board: ergohaven
     shield: velvet_v3_left
-    snippet: studio-rpc-usb-uart
-    cmake-args: -DCONFIG_ZMK_STUDIO=y
+    snippet: zmk-usb-logging
+    # snippet: studio-rpc-usb-uart
+    # cmake-args: -DCONFIG_ZMK_STUDIO=y
   - board: ergohaven
     shield: velvet_v3_ruen velvet_v3_left
-    snippet: studio-rpc-usb-uart
-    cmake-args: -DCONFIG_ZMK_STUDIO=y
+    snippet: zmk-usb-logging
+    # snippet: studio-rpc-usb-uart
+    # cmake-args: -DCONFIG_ZMK_STUDIO=y
     artifact-name: velvet_v3_left_ruen-ergohaven-zmk
   - board: ergohaven
     shield: velvet_v3_right
+    snippet: zmk-usb-logging
 
   - board: ergohaven
     shield: velvet_v3_ui_left
