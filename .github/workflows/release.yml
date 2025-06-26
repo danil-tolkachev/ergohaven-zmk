@@ -11,7 +11,7 @@ jobs:
     uses: ./.github/workflows/build.yml
 
   release:
-    name: Build
+    name: Release
     needs:
       - build
     runs-on: ubuntu-latest
@@ -27,12 +27,11 @@ jobs:
           path: firmware
 
       - name: Create Release
-        id: create_release
-        uses: actions/create-release@v1
+        uses: marvinpinto/action-automatic-releases@latest
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
-          tag_name: ${{ github.ref }}
-          release_name: Release ${{ github.ref }}
-          draft: false
+          repo_token: '${{ secrets.GITHUB_TOKEN }}'
           prerelease: false
+          files: |
+            firmware/**/*.uf2
