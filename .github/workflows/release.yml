@@ -6,7 +6,21 @@ on:
       - '*'
 
 jobs:
+
   build:
+    uses: ./.github/workflows/build.yml
+
+  pre-release:
+    name: Pre-Release
+    needs:
+      - build
+    runs-on: ubuntu-latest
+    permissions:
+      contents: 'write'
+      packages: 'write'
+      pull-requests: 'read'
+
+  release:
     name: Create Release
     runs-on: ubuntu-latest
     steps:
