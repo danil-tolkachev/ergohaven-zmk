@@ -10,8 +10,8 @@ jobs:
   build:
     uses: ./.github/workflows/build.yml
 
-  pre-release:
-    name: Pre-Release
+  release:
+    name: Build
     needs:
       - build
     runs-on: ubuntu-latest
@@ -20,9 +20,6 @@ jobs:
       packages: 'write'
       pull-requests: 'read'
 
-  release:
-    name: Create Release
-    runs-on: ubuntu-latest
     steps:
       - name: Download
         uses: actions/download-artifact@v4
