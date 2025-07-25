@@ -4,3 +4,20 @@
     status = "okay";
     device = <&trackball>;
 };
+
+/ {
+    split_inputs {
+        #address-cells = <1>;
+        #size-cells = <0>;
+
+        trackball_split: trackball_split@0 {
+            compatible = "zmk,input-split";
+            reg = <0>;
+        };
+    };
+};
+
+&trackball_listener {
+    status = "okay";
+    device = <&trackball_split>;
+};
