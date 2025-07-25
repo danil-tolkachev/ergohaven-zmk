@@ -1,10 +1,5 @@
 #include "velvet_v3_ui.dtsi"
 
-&trackball_listener {
-    status = "okay";
-    device = <&trackball>;
-};
-
 / {
     split_inputs {
         #address-cells = <1>;
