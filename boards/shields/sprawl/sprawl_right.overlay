@@ -1,4 +1,4 @@
-#include "broom.dtsi"
+#include "sprawl.dtsi"
 
 &default_transform {
     col-offset = <6>;

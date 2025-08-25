@@ -105,30 +105,30 @@ include:
     shield: k03_left_qube
 
   - board: ergohaven
-    shield: broom_left
+    shield: sprawl_left
     snippet: studio-rpc-usb-uart
     cmake-args: -DCONFIG_ZMK_STUDIO=y
   - board: ergohaven
-    shield: broom_left
-    keymap: broom_ruen
+    shield: sprawl_left
+    keymap: sprawl_ruen
     snippet: studio-rpc-usb-uart
     cmake-args: -DCONFIG_ZMK_STUDIO=y
-    artifact-name: broom_left_ruen-ergohaven-zmk
+    artifact-name: sprawl_left_ruen-ergohaven-zmk
   - board: ergohaven
-    shield: broom_right
+    shield: sprawl_right
   - board: ergohaven
-    shield: broom_qube qube dongle_screen
+    shield: sprawl_qube qube dongle_screen
     snippet: studio-rpc-usb-uart
     cmake-args: -DCONFIG_ZMK_STUDIO=y
-    artifact-name: broom_qube-ergohaven-zmk
+    artifact-name: sprawl_qube-ergohaven-zmk
   - board: ergohaven
-    shield: broom_qube qube dongle_screen
-    keymap: broom_ruen
+    shield: sprawl_qube qube dongle_screen
+    keymap: sprawl_ruen
     snippet: studio-rpc-usb-uart
     cmake-args: -DCONFIG_ZMK_STUDIO=y
-    artifact-name: broom_qube_ruen-ergohaven-zmk
+    artifact-name: sprawl_qube_ruen-ergohaven-zmk
   - board: ergohaven
-    shield: broom_left_qube
+    shield: sprawl_left_qube
 
   - board: ergohaven
     shield: trackball

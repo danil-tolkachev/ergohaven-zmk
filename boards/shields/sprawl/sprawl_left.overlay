@@ -1,4 +1,4 @@
-#include "broom.dtsi"
+#include "sprawl.dtsi"
 
 &kscan0 {
     compatible = "zmk,kscan-gpio-matrix";
