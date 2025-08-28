@@ -19,12 +19,22 @@
         };
     };
 
+    combos {
+        compatible = "zmk,combos";
+
+        cmb_scroll {
+            bindings = <&mo 1>;
+            key-positions = <0 1>;
+        };
+    };
+
     keymap {
         compatible = "zmk,keymap";
 
         base {
             bindings = <
-&mkp MB2  &mkp MB1  &bt BT_NXT  &bt BT_CLR
+&mkp MB2    &mkp MB1
+&bt BT_NXT  &bt BT_CLR
             >;
 
             display-name = "Base";
@@ -32,7 +42,8 @@
 
         scroll {
             bindings = <
-&trans  &trans  &trans  &trans
+&trans  &trans
+&trans  &trans
             >;
 
             display-name = "Scroll";
@@ -40,7 +51,8 @@
 
         sniper {
             bindings = <
-&trans  &trans  &trans  &trans
+&trans  &trans
+&trans  &trans
             >;
 
             display-name = "Sniper";
