@@ -10,6 +10,8 @@ manifest:
       url-base: https://github.com/carrefinho
     - name: janpfischer
       url-base: https://github.com/janpfischer
+    - name: AYM1607
+      url-base: https://github.com/AYM1607
   projects:
     - name: zmk
       remote: zmkfirmware
@@ -27,5 +29,8 @@ manifest:
     # - name: ergohaven-zmk-qube
     #   remote: ergohaven
     #   revision: eh
+    - name: zmk-driver-azoteq-iqs5xx
+      remote: AYM1607
+      revision: main
   self:
     path: config

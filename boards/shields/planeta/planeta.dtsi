@@ -37,9 +37,10 @@
         full-ohms = <(806000 + 1564000)>;
     };
 
-    trackball_listener: trackball_listener {
+    tps43_listener: tps43_listener {
         compatible = "zmk,input-listener";
-        status = "disabled";
+        status = "ok";
+        device = <&tps43>;
     };
 
     split_inputs {
@@ -54,37 +55,32 @@
     };
 };
 
-&spi0 {
-    status = "disabled";
-    cs-gpios = <&gpio0 13 GPIO_ACTIVE_LOW>;
+&i2c0 {
+    status = "okay";
+    tps43: iqs5xx@74 {
+        status = "okay";
+        compatible = "azoteq,iqs5xx";
+        reg = <0x74>;
 
-    trackball: trackball@0 {
-        status = "disabled";
-        compatible = "pixart,pmw3610";
-        reg = <0>;
-        spi-max-frequency = <2000000>;
-        irq-gpios = <&gpio0 15 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>;
-        cpi = <1000>;
-        evt-type = <INPUT_EV_REL>;
-        x-input-code = <INPUT_REL_X>;
-        y-input-code = <INPUT_REL_Y>;
+        reset-gpios = <&gpio0 15 GPIO_ACTIVE_LOW>;
+        rdy-gpios = <&gpio0 17 GPIO_ACTIVE_HIGH>;
 
-        force-awake;
-        /* keep the sensor awake while ZMK activity state is ACTIVE,
-           fallback to normal downshift mode after ZMK goes into IDLE / SLEEP mode.
-           thus, the sensor would be a `wakeup-source` */
+        /*
+         * Potentially non-exhaustive list of configuration options.
+         * See: dts/bindings/input/azoteq,iqs5xx-common.yaml for a full list.
+         */
+        one-finger-tap;
+        press-and-hold;
+        press-and-hold-time = <250>;
+        two-finger-tap;
+
+        scroll;
+        natural-scroll-y;
+        natural-scroll-x;
+
+        bottom-beta = <5>;
+        stationary-threshold = <5>;
+
+        switch-xy;
     };
-};
-
-&spi0 {
-    status = "okay";
-};
-
-&trackball {
-    status = "okay";
-};
-
-&trackball_listener {
-    status = "okay";
-    device = <&trackball>;
 };
