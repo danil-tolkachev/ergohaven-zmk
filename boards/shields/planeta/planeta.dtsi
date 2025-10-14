@@ -42,17 +42,6 @@
         status = "ok";
         device = <&tps43>;
     };
-
-    split_inputs {
-        #address-cells = <1>;
-        #size-cells = <0>;
-
-        trackball_split: trackball_split@0 {
-            compatible = "zmk,input-split";
-            reg = <0>;
-            status = "disabled";
-        };
-    };
 };
 
 &i2c0 {
