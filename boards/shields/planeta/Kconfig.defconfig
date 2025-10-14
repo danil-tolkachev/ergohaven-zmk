@@ -1,0 +1,15 @@
+if SHIELD_PLANETA
+
+config ZMK_KEYBOARD_NAME
+    default "EH Planeta v3"
+
+config ZMK_SPLIT
+    default n
+
+config ZMK_SPLIT_ROLE_CENTRAL
+    default y
+
+config ZMK_POINTING
+    default y
+
+endif

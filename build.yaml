@@ -162,4 +162,9 @@ include:
     cmake-args: -DCONFIG_ZMK_STUDIO=y
 
   - board: ergohaven
+    shield: planeta
+    snippet: studio-rpc-usb-uart
+    cmake-args: -DCONFIG_ZMK_STUDIO=y
+
+  - board: ergohaven
     shield: settings_reset
