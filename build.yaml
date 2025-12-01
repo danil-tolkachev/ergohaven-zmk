@@ -105,6 +105,34 @@ include:
     shield: k03_left_qube
 
   - board: ergohaven
+    shield: k04_left
+    keymap: k03
+    snippet: studio-rpc-usb-uart
+    cmake-args: -DCONFIG_ZMK_STUDIO=y
+  - board: ergohaven
+    shield: k04_left
+    keymap: k03_ruen
+    snippet: studio-rpc-usb-uart
+    cmake-args: -DCONFIG_ZMK_STUDIO=y
+    artifact-name: k04_left_ruen-ergohaven-zmk
+  - board: ergohaven
+    shield: k04_right
+  - board: ergohaven
+    shield: k04_qube qube dongle_screen
+    keymap: k03
+    snippet: studio-rpc-usb-uart
+    cmake-args: -DCONFIG_ZMK_STUDIO=y
+    artifact-name: k04_qube-ergohaven-zmk
+  - board: ergohaven
+    shield: k04_qube qube dongle_screen
+    keymap: k03_ruen
+    snippet: studio-rpc-usb-uart
+    cmake-args: -DCONFIG_ZMK_STUDIO=y
+    artifact-name: k04_qube_ruen-ergohaven-zmk
+  - board: ergohaven
+    shield: k04_left_qube
+
+  - board: ergohaven
     shield: imperial44_left
     snippet: studio-rpc-usb-uart
     cmake-args: -DCONFIG_ZMK_STUDIO=y
