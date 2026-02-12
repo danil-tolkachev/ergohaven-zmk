@@ -62,8 +62,8 @@
 
         base {
             bindings = <
-&mkp MB1  &hold_mo_tap_mkp 2 MB2
-&trans  &trans
+&mkp MB1      &hold_mo_tap_mkp 2 MB2
+&bt BT_SEL 0  &bt BT_NXT
             >;
 
             display-name = "Base";
@@ -89,7 +89,7 @@
 
         adjust {
             bindings = <
-&adj1  &adj2
+&adj1   &adj2
 &trans  &trans
             >;
 
