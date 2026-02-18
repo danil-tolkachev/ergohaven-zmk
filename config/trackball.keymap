@@ -62,7 +62,9 @@
 
         base {
             bindings = <
-&mkp MB1  &hold_mo_tap_mkp 2 MB2
+&mkp MB1      &hold_mo_tap_mkp 2 MB2
+&trans  &trans
+&bt BT_SEL 0  &bt BT_NXT
             >;
 
             display-name = "Base";
@@ -70,6 +72,8 @@
 
         scroll {
             bindings = <
+&trans  &trans
+&trans  &trans
 &trans  &trans
             >;
 
@@ -79,6 +83,8 @@
         sniper {
             bindings = <
 &trans  &trans
+&trans  &trans
+&trans  &trans
             >;
 
             display-name = "Sniper";
@@ -86,7 +92,9 @@
 
         adjust {
             bindings = <
-&adj1  &adj2
+&adj1   &adj2
+&trans  &trans
+&trans  &trans
             >;
 
             label = "Adjust";
