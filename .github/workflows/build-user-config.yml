@@ -101,6 +101,7 @@ jobs:
             mkdir "${{ env.base_dir }}/${{ inputs.config_path }}"
             cp -R ${{ inputs.config_path }}/* "${{ env.base_dir }}/${{ inputs.config_path }}/"
           fi
+          ls -R "${{ env.base_dir }}/${{ inputs.config_path }}/"
 
       - name: Cache west modules
         uses: actions/cache@v4
