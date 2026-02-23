@@ -7,53 +7,12 @@
 #include <dt-bindings/zmk/pointing.h>
 
 / {
-    behaviors {
-        adj1: adj1 {
-            compatible = "zmk,behavior-tap-dance";
-            label = "ADJ1";
-            #binding-cells = <0>;
-            bindings = <&bt BT_SEL 0>, <&bt BT_CLR>;
-        };
-
-        adj2: adj2 {
-            compatible = "zmk,behavior-tap-dance";
-            label = "ADJ2";
-            #binding-cells = <0>;
-            bindings = <&bt BT_NXT>, <&bt BT_CLR_ALL>;
-        };
-
-        adj_td: adj_td {
-            compatible = "zmk,behavior-tap-dance";
-            label = "ADJ_TD";
-            #binding-cells = <0>;
-            bindings = <&hold_mo_tap_mkp 1 MB3>, <&to 3>;
-        };
-
-        hold_mo_tap_mkp: hold_mo_tap_mkp {
-            compatible = "zmk,behavior-hold-tap";
-            label = "HOLD_MO_TAP_MKP";
-            bindings = <&mo>, <&mkp>;
-
-            #binding-cells = <2>;
-            hold-while-undecided;
-            tapping-term-ms = <200>;
-            hold-while-undecided-linger;
-        };
-    };
-
     combos {
         compatible = "zmk,combos";
 
         base_combo {
-            bindings = <&adj_td>;
+            bindings = <&mkp MB3>;
             key-positions = <0 1>;
-            layers = <0 1 2>;
-        };
-
-        adj_combo {
-            bindings = <&to 0>;
-            key-positions = <0 1>;
-            layers = <3>;
         };
     };
 
@@ -63,7 +22,7 @@
         base {
             bindings = <
 &mkp MB1      &mkp MB2
-&mo 1         &mo 2
+&mo 2         &mo 1
 &bt BT_SEL 0  &bt BT_NXT
             >;
 
@@ -88,16 +47,6 @@
             >;
 
             display-name = "Sniper";
-        };
-
-        adjust {
-            bindings = <
-&adj1   &adj2
-&trans  &trans
-&trans  &trans
-            >;
-
-            label = "Adjust";
         };
     };
 };
