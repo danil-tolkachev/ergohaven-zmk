@@ -4,4 +4,4 @@ include:
     shield: trackball
     keymap: trackball_royal
     snippet: studio-rpc-usb-uart
-    cmake-args: -DCONFIG_ZMK_STUDIO=y
+    cmake-args: -DCONFIG_ZMK_STUDIO=y -DCONFIG_ZMK_KEYBOARD_NAME="EH TB Royal"
