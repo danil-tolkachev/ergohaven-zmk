@@ -132,6 +132,7 @@ include:
 
   - board: ergohaven
     shield: trackball
+    keymap: trackball_royal
     snippet: studio-rpc-usb-uart
     cmake-args: -DCONFIG_ZMK_STUDIO=y
 
