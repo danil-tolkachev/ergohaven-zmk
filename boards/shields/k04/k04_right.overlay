@@ -29,11 +29,3 @@
 &encoder_R1 {
     status = "okay";
 };
-
-&encoder_R2 {
-    status = "okay";
-};
-
-&encoder_R3 {
-    status = "okay";
-};
