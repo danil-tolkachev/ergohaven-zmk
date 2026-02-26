@@ -46,6 +46,9 @@
             >;
 
             display-name = "Nav";
+            sensor-bindings =
+                <&inc_dec_kp PAGE_UP PAGE_DOWN>,
+                <&inc_dec_kp PAGE_UP PAGE_DOWN>;
         };
 
         sym {
