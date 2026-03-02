@@ -1,1 +1,10 @@
 #include "k04.dtsi"
+
+&trackball_split {
+  status = "okay";
+};
+
+&trackball_listener {
+    status = "okay";
+    device = <&trackball_split>;
+};

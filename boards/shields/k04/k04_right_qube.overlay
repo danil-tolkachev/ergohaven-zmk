@@ -1,0 +1,6 @@
+#include "k04_right.overlay"
+
+&trackball_split {
+  status = "okay";
+  device = <&trackball>;
+};

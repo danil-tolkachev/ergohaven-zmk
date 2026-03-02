@@ -29,3 +29,16 @@
 &encoder_R1 {
     status = "okay";
 };
+
+&spi0 {
+    status = "okay";
+};
+
+&trackball {
+    status = "okay";
+};
+
+&trackball_listener {
+    status = "okay";
+    device = <&trackball>;
+};

@@ -1,4 +1,4 @@
-if SHIELD_K04_QUBE || SHIELD_K04_LEFT
+if SHIELD_K04_QUBE || SHIELD_K04_RIGHT
 
 config ZMK_KEYBOARD_NAME
     default "EH K:04"
@@ -6,14 +6,14 @@ config ZMK_KEYBOARD_NAME
 config ZMK_SPLIT_ROLE_CENTRAL
     default y
 
+config ZMK_POINTING
+    default y
+
 endif
 
 if SHIELD_K04_QUBE || SHIELD_K04_LEFT_QUBE || SHIELD_K04_LEFT || SHIELD_K04_RIGHT
 
 config ZMK_SPLIT
-    default y
-
-config ZMK_POINTING
     default y
 
 endif
