@@ -3,28 +3,26 @@ include:
 
   - board: ergohaven
     shield: k04_left
-    keymap: k04
-    snippet: studio-rpc-usb-uart
-    cmake-args: -DCONFIG_ZMK_STUDIO=y
-  - board: ergohaven
-    shield: k04_left
-    keymap: k03_ruen
-    snippet: studio-rpc-usb-uart
-    cmake-args: -DCONFIG_ZMK_STUDIO=y
-    artifact-name: k04_left_ruen-ergohaven-zmk
   - board: ergohaven
     shield: k04_right
+    keymap: k04_ruen
+    snippet: studio-rpc-usb-uart
+    cmake-args: -DCONFIG_ZMK_STUDIO=y
+    artifact-name: k04_right_ruen-ergohaven-zmk
+  - board: ergohaven
+    shield: k04_right
+    snippet: studio-rpc-usb-uart
+    cmake-args: -DCONFIG_ZMK_STUDIO=y
   - board: ergohaven
     shield: k04_qube qube dongle_screen
-    keymap: k04
     snippet: studio-rpc-usb-uart
     cmake-args: -DCONFIG_ZMK_STUDIO=y
     artifact-name: k04_qube-ergohaven-zmk
   - board: ergohaven
     shield: k04_qube qube dongle_screen
-    keymap: k03_ruen
+    keymap: k04_ruen
     snippet: studio-rpc-usb-uart
     cmake-args: -DCONFIG_ZMK_STUDIO=y
     artifact-name: k04_qube_ruen-ergohaven-zmk
   - board: ergohaven
-    shield: k04_left_qube
+    shield: k04_right_qube
