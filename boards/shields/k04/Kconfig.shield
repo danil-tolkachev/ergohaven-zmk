@@ -1,5 +1,5 @@
-config SHIELD_K04_LEFT_QUBE
-    def_bool $(shields_list_contains,k04_left_qube)
+config SHIELD_K04_RIGHT_QUBE
+    def_bool $(shields_list_contains,k04_right_qube)
 
 config SHIELD_K04_QUBE
     def_bool $(shields_list_contains,k04_qube)
