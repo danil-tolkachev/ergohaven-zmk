@@ -51,8 +51,8 @@
         compatible = "azoteq,iqs5xx";
         reg = <0x74>;
 
-        reset-gpios = <&gpio0 24 GPIO_ACTIVE_LOW>;
-        rdy-gpios = <&gpio0 13 GPIO_ACTIVE_HIGH>;
+        reset-gpios = <&gpio0 15 GPIO_ACTIVE_LOW>;
+        rdy-gpios = <&gpio0 17 GPIO_ACTIVE_HIGH>;
 
         /*
          * Potentially non-exhaustive list of configuration options.
