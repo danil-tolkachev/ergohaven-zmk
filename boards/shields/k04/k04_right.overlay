@@ -30,15 +30,15 @@
     status = "okay";
 };
 
-&spi0 {
+&i2c0 {
     status = "okay";
 };
 
-&trackball {
+&tps43 {
     status = "okay";
 };
 
-&trackball_listener {
+&tps43_listener {
     status = "okay";
-    device = <&trackball>;
+    device = <&tps43>;
 };
