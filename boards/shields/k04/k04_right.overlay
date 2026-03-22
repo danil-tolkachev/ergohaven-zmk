@@ -30,7 +30,7 @@
     status = "okay";
 };
 
-&spi0 {
+&spi1 {
     status = "okay";
 };
 
@@ -41,4 +41,17 @@
 &trackball_listener {
     status = "okay";
     device = <&trackball>;
+};
+
+&i2c0 {
+    status = "okay";
+};
+
+&tps43 {
+    status = "okay";
+};
+
+&tps43_listener {
+    status = "okay";
+    device = <&tps43>;
 };

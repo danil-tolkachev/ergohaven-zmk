@@ -8,3 +8,8 @@
     status = "okay";
     device = <&trackball_split>;
 };
+
+&tps43_listener {
+    status = "okay";
+    device = <&tps43>;
+};

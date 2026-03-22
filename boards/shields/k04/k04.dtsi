@@ -64,6 +64,11 @@ RC(3,5)  RC(3,4)  RC(3,3)  RC(3,2)  RC(3,1)  RC(3,0)  RC(4,0)    RC(4,6)  RC(3,6
         status = "disabled";
     };
 
+    tps43_listener: tps43_listener {
+        compatible = "zmk,input-listener";
+        status = "disabled";
+    };
+
     split_inputs {
         #address-cells = <1>;
         #size-cells = <0>;
@@ -76,9 +81,12 @@ RC(3,5)  RC(3,4)  RC(3,3)  RC(3,2)  RC(3,1)  RC(3,0)  RC(4,0)    RC(4,6)  RC(3,6
     };
 };
 
-&spi0 {
+&spi1 {
     status = "disabled";
     cs-gpios = <&gpio0 5 GPIO_ACTIVE_LOW>;
+    pinctrl-0 = <&spi1_default>;
+    pinctrl-1 = <&spi1_sleep>;
+    pinctrl-names = "default", "sleep";
 
     trackball: trackball@0 {
         status = "disabled";
@@ -93,8 +101,38 @@ RC(3,5)  RC(3,4)  RC(3,3)  RC(3,2)  RC(3,1)  RC(3,0)  RC(4,0)    RC(4,6)  RC(3,6
     };
 };
 
+&i2c0 {
+    status = "disabled";
+    tps43: iqs5xx@74 {
+        status = "disabled";
+        compatible = "azoteq,iqs5xx";
+        reg = <0x74>;
+
+        reset-gpios = <&gpio0 24 GPIO_ACTIVE_LOW>;
+        rdy-gpios = <&gpio0 13 GPIO_ACTIVE_HIGH>;
+
+        /*
+         * Potentially non-exhaustive list of configuration options.
+         * See: dts/bindings/input/azoteq,iqs5xx-common.yaml for a full list.
+         */
+        one-finger-tap;
+        press-and-hold;
+        press-and-hold-time = <250>;
+        two-finger-tap;
+
+        scroll;
+        natural-scroll-y;
+        natural-scroll-x;
+
+        bottom-beta = <5>;
+        stationary-threshold = <5>;
+
+        switch-xy;
+    };
+};
+
 &pinctrl {
-    spi0_default: spi0_default {
+    spi1_default: spi1_default {
         group1 {
             psels = <NRF_PSEL(SPIM_SCK, 0, 1)>,
                 <NRF_PSEL(SPIM_MOSI, 0, 0)>,
@@ -102,11 +140,26 @@ RC(3,5)  RC(3,4)  RC(3,3)  RC(3,2)  RC(3,1)  RC(3,0)  RC(4,0)    RC(4,6)  RC(3,6
         };
     };
 
-    spi0_sleep: spi0_sleep {
+    spi1_sleep: spi1_sleep {
         group1 {
             psels = <NRF_PSEL(SPIM_SCK, 0, 1)>,
                 <NRF_PSEL(SPIM_MOSI, 0, 0)>,
                 <NRF_PSEL(SPIM_MISO, 0, 0)>;
+            low-power-enable;
+        };
+    };
+
+    i2c0_default: i2c0_default {
+        group1 {
+            psels = <NRF_PSEL(TWIM_SDA, 0, 24)>,
+                <NRF_PSEL(TWIM_SCL, 0, 13)>;
+        };
+    };
+
+    i2c0_sleep: i2c0_sleep {
+        group1 {
+            psels = <NRF_PSEL(TWIM_SDA, 0, 24)>,
+                <NRF_PSEL(TWIM_SCL, 0, 13)>;
             low-power-enable;
         };
     };

@@ -20,8 +20,14 @@ manifest:
     - name: zmk-raw-hid
       remote: ergohaven
       revision: main
+    - name: zmk-smart-rgbled-widget
+      remote: ergohaven
+      revision: eh
     - name: zmk-scroll-snap
       remote: kot149
       revision: v1
+    - name: zmk-driver-azoteq-iqs5xx
+      remote: eh
+      revision: eh
   self:
     path: config

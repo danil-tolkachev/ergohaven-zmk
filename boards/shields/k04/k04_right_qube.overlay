@@ -1,6 +1,11 @@
 #include "k04_right.overlay"
 
 &trackball_split {
-  status = "okay";
-  device = <&trackball>;
+status = "okay";
+device = <&trackball>;
 };
+
+// &trackball_split {
+//   status = "okay";
+//   device = <&tps43>;
+// };
