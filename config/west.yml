@@ -27,7 +27,7 @@ manifest:
       remote: kot149
       revision: v1
     - name: zmk-driver-azoteq-iqs5xx
-      remote: eh
+      remote: ergohaven
       revision: eh
   self:
     path: config
