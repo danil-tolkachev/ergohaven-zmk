@@ -1,0 +1,12 @@
+&spi1 {
+    status = "okay";
+};
+
+&trackball {
+    status = "okay";
+};
+
+&trackball_listener {
+    status = "okay";
+    device = <&trackball>;
+};

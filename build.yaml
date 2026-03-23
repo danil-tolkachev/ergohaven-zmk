@@ -10,8 +10,16 @@ include:
     cmake-args: -DCONFIG_ZMK_STUDIO=y
     artifact-name: k04_right_ruen-ergohaven-zmk
   - board: ergohaven
-    shield: k04_right
+    shield: k04_right k04_right_touch
+    keymap: k04
     snippet: studio-rpc-usb-uart
+    artifact-name: k04_right_touch
+    cmake-args: -DCONFIG_ZMK_STUDIO=
+  - board: ergohaven
+    shield: k04_right k04_right_ball
+    keymap: k04
+    snippet: studio-rpc-usb-uart
+    artifact-name: k04_right_ball
     cmake-args: -DCONFIG_ZMK_STUDIO=y
   - board: ergohaven
     shield: k04_qube qube dongle_screen
